@@ -1,6 +1,16 @@
-# HackTX 2026
+# LORE
 
-Clean React Native starter built with Expo, TypeScript, and Expo Router.
+LORE is a group-first social prototype built for the Meta AI social product challenge. It keeps the familiarity of an Instagram-style universal feed while making groups—not individual creators—the primary unit of participation.
+
+The current demo includes:
+
+- a universal feed with multi-perspective Moment Stacks and cross-community Ripples;
+- story-style group drops;
+- circle discovery and a group-first creation flow;
+- group chats where Muse turns shared media and conversation into a post draft;
+- a profile organized around moments, circles, and ripples.
+
+The experience is frontend-only for now. Content and AI responses are deterministic demo data so the complete product loop can be tested before backend and model integration.
 
 ## Development
 
@@ -38,5 +48,3 @@ The repository owner must complete the one-time Expo and GitHub connection descr
 - `app.json` contains Expo configuration.
 - `.eas/workflows/` contains pull-request preview and production web deployments.
 - `docs/REMOTE_AGENT_WORKFLOW.md` contains the shared workflow for humans and coding agents.
-
-No product features or architecture decisions have been added yet.
