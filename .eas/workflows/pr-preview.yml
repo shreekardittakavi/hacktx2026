@@ -1,0 +1,27 @@
+name: Pull request web preview
+
+on:
+  pull_request: {}
+
+jobs:
+  validate:
+    name: Validate web app
+    steps:
+      - uses: eas/checkout
+      - uses: eas/install_node_modules
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Verify static web export
+        run: npm run export:web
+
+  deploy:
+    name: Deploy pull request preview
+    needs: [validate]
+    type: deploy
+
+  comment:
+    name: Post preview link on pull request
+    needs: [deploy]
+    type: github-comment

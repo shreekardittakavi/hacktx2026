@@ -1,0 +1,5 @@
+# Repository instructions
+
+Before changing this repository, read `AGENTS.md` and `docs/REMOTE_AGENT_WORKFLOW.md` completely. Those files are authoritative.
+
+Never implement a feature directly on `main`. Use one isolated branch and pull request per feature, preserve unrelated work, run `npm run lint`, `npm run typecheck`, and `npm run export:web`, and report the pull request plus the newest successful EAS web preview URL. Do not merge or promote a preview to production without explicit user authorization.

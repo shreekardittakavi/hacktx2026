@@ -1,0 +1,26 @@
+name: Deploy production website
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  validate:
+    name: Validate web app
+    steps:
+      - uses: eas/checkout
+      - uses: eas/install_node_modules
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Verify static web export
+        run: npm run export:web
+
+  deploy:
+    name: Deploy production website
+    needs: [validate]
+    type: deploy
+    environment: production
+    params:
+      prod: true
